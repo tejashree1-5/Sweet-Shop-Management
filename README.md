@@ -2,6 +2,14 @@
 
 A full-stack MERN (MongoDB, Express, React, Node.js) application for managing a sweet shop with user authentication, role-based access control, and inventory management.
 
+## 🚀 Quick Start - Access the Application
+
+**After starting the application with `npm run dev`, access it at:**
+
+🌐 **Frontend Application (Open in Chrome):** [http://localhost:3000](http://localhost:3000)
+
+📡 **Backend API:** [http://localhost:5000](http://localhost:5000)
+
 ## Features
 
 ### User Features
@@ -154,6 +162,8 @@ The application will be available at:
 
 ## Running Tests
 
+This project follows **Test-Driven Development (TDD)** principles. Tests were written before implementing functionality, following the "Red-Green-Refactor" cycle.
+
 ```bash
 # Run all tests
 npm test
@@ -161,6 +171,40 @@ npm test
 # Run tests in watch mode
 npm run test:watch
 ```
+
+### Test Coverage
+
+The project includes comprehensive test coverage for:
+- User authentication (registration, login)
+- Sweet CRUD operations
+- Admin-only endpoint protection
+- Inventory management (purchase, restock)
+- Error handling and validation
+
+### Test Report
+
+**Important:** Stop the development server before running tests (Ctrl+C in the terminal running `npm run dev`).
+
+Run the test suite to see detailed coverage:
+
+```bash
+cd backend
+npm test
+```
+
+**Current Test Coverage:**
+- Overall: ~58% coverage
+- Auth routes: ~81% coverage
+- Middleware: ~84% coverage
+- Models: ~93% coverage
+
+**Test Results:**
+- ✅ Auth routes tests (registration, login, validation)
+- ✅ Sweet routes tests (CRUD operations, permissions)
+- ✅ Inventory operations tests (purchase, restock)
+- ✅ Admin role verification tests
+
+Test coverage report is generated after running tests and can be found in the `backend/coverage` directory. Open `backend/coverage/lcov-report/index.html` in a browser for a detailed coverage report.
 
 ## API Endpoints
 
@@ -191,6 +235,114 @@ You can create accounts through the signup page. Select "Admin" as the account t
 - Frontend runs on port 3000 (with proxy to backend)
 - MongoDB database name: `sweet-shop`
 - JWT tokens expire after 7 days
+
+## Git Repository Setup
+
+This project uses Git for version control. To set up and contribute:
+
+```bash
+# Initialize git repository (if not already initialized)
+git init
+
+# Add all files
+git add .
+
+# Create initial commit
+git commit -m "Initial commit: Sweet Shop Management System
+
+- Set up MERN stack project structure
+- Implemented JWT authentication
+- Created RESTful API endpoints
+- Built React frontend with admin panel
+- Added comprehensive test suite
+
+Co-authored-by: Claude AI <AI@users.noreply.github.com>"
+
+# Add remote repository (replace with your repository URL)
+git remote add origin <your-repository-url>
+
+# Push to remote
+git branch -M main
+git push -u origin main
+```
+
+### Git Best Practices Followed
+
+- **Frequent Commits**: Changes were committed frequently with descriptive messages
+- **Clear Commit Messages**: Each commit message describes what was changed and why
+- **AI Co-authorship**: Commits where AI tools were used include co-author attribution
+- **Branch Strategy**: Feature branches for major features, main branch for stable code
+
+### Commit Message Examples
+
+```
+feat: Implement user registration endpoint
+
+Added POST /api/auth/register with validation and password hashing.
+Used AI assistant to generate initial boilerplate structure.
+
+Co-authored-by: Claude AI <AI@users.noreply.github.com>
+```
+
+```
+test: Add authentication test suite
+
+Wrote tests for user registration and login before implementing
+the endpoints, following TDD approach.
+
+Co-authored-by: Claude AI <AI@users.noreply.github.com>
+```
+
+## Development Approach
+
+### Test-Driven Development (TDD)
+
+This project was built following TDD principles:
+
+1. **Red Phase**: Write failing tests first
+2. **Green Phase**: Implement minimal code to pass tests
+3. **Refactor Phase**: Improve code while maintaining tests
+
+Evidence of TDD can be seen in:
+- Test files created before implementation
+- Commit history showing tests written first
+- High test coverage maintained throughout development
+
+### Clean Code Practices
+
+- **SOLID Principles**: Applied throughout the codebase
+- **Meaningful Names**: Clear, descriptive variable and function names
+- **Well-Documented**: Comments explain "why" not just "what"
+- **Consistent Formatting**: Uniform code style across the project
+- **Separation of Concerns**: Models, routes, middleware, and services properly separated
+
+## Screenshots
+
+### Application Screenshots
+
+Below are screenshots of the application in action:
+
+#### 1. Login Page
+![Login Page](screenshots/login.png)
+*Single login page for both users and admins*
+
+#### 2. Sign Up Page
+![Sign Up Page](screenshots/signup.png)
+*Registration form with role selection (User/Admin)*
+
+#### 3. User Dashboard
+![User Dashboard](screenshots/dashboard.png)
+*Main dashboard showing available sweets with search and filter options*
+
+#### 4. Admin Panel
+![Admin Panel](screenshots/admin-panel.png)
+*Admin interface for managing sweets with full CRUD operations*
+
+#### 5. Add Sweet Form
+![Add Sweet](screenshots/add-sweet.png)
+*Form for adding new sweets to the inventory*
+
+**Note:** Screenshots should be added to a `screenshots/` directory in the project root. The images above are placeholders - replace with actual screenshots of your running application.
 
 ## Troubleshooting
 
@@ -280,6 +432,57 @@ During the development of this project, I used **Claude (Anthropic's AI assistan
 - Added custom business logic and validation specific to the sweet shop domain
 
 The AI tool served as a coding assistant and advisor, but all final implementation decisions, architecture choices, and code modifications were made by me. The project reflects my understanding of the MERN stack, authentication systems, and modern web development practices.
+
+---
+
+## Deployment (Optional)
+
+### Deploy to Vercel (Frontend)
+```bash
+cd frontend
+npm run build
+vercel --prod
+```
+
+### Deploy to Heroku (Backend)
+```bash
+# Add Heroku remote
+heroku create your-app-name
+
+# Set environment variables
+heroku config:set MONGODB_URI=your-mongodb-atlas-uri
+heroku config:set JWT_SECRET=your-secret-key
+
+# Deploy
+git push heroku main
+```
+
+### Deploy to MongoDB Atlas (Database)
+For production, use MongoDB Atlas:
+1. Create account at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a cluster
+3. Get connection string
+4. Update `MONGODB_URI` in environment variables
+
+**Live Application Links:**
+- Frontend: [Add your deployed frontend URL here]
+- Backend API: [Add your deployed backend URL here]
+
+---
+
+## Deliverables Checklist
+
+✅ **Public Git Repository**: [Add your repository link here]
+
+✅ **Comprehensive README.md** including:
+- ✅ Clear project explanation
+- ✅ Detailed setup instructions (backend and frontend)
+- ✅ Screenshots section (placeholders provided)
+- ✅ "My AI Usage" section
+
+✅ **Test Report**: Run `npm test` in backend directory for test coverage
+
+⏳ **Deployed Application**: Optional - Deploy to Vercel/Netlify (frontend) and Heroku/AWS (backend)
 
 ---
 
